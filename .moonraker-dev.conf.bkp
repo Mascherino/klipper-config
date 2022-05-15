@@ -1,0 +1,58 @@
+[server]
+enable_debug_logging = True
+port = 7126
+
+[database]
+database_path = ~/.moonraker_database-dev
+
+[file_manager]
+config_path = ~/klipper_config
+log_path = ~/klipper_logs
+
+[authorization]
+force_logins = false
+trusted_clients = 
+	192.168.2.0/24
+	192.168.2.108
+	192.168.2.249
+	FE80::/10
+	::1/128
+	127.0.0.1
+cors_domains = 
+	http://app.fluidd.xyz
+	*.local
+	*.lan
+	http://octopi.local:8080
+
+[octoprint_compat]
+
+[update_manager KlipperScreen]
+type = git_repo
+path = ~/KlipperScreen
+origin = https://github.com/jordanruthe/KlipperScreen.git
+env = ~/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
+
+[history]
+
+[spool_manager]
+
+[spool_manager template prusament_pla]
+material = PLA
+vendor = Prusa
+density = 1.24
+diameter = 1.75
+total_weight = 970
+spool_weight = 200
+cost = 24.99
+
+[spool_manager template eryone_pla]
+material = PLA
+vendor = ERYONE
+density = 1.24
+diameter = 1.75
+total_weight = 1230
+spool_weight = 230
+cost = 24.99
+
